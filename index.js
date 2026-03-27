@@ -24,4 +24,20 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice())
+
+function getHumanChoice(){
+    let humanChoice = parseInt(prompt('Enter your choice (1->rock, 2->paper, 3->scissor)'))
+    
+    switch(humanChoice){
+        case 1:
+            return 'ROCK'
+            break
+        case 2:
+            return 'PAPER'
+            break
+        case 3:
+            return 'SCISSOR'
+            break;
+    }
+}
+

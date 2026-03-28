@@ -41,3 +41,21 @@ function getHumanChoice(){
     }
 }
 
+let ComputerScore = 0
+let HumanScore = 0
+
+function playRound(humanChoice, computerChoice){
+    
+    if (humanChoice === computerChoice){
+        return 'Tie, No points assigned'
+    }else if (humanChoice === 'ROCK' && computerChoice === 'SCISSOR' || humanChoice === 'PAPER' && computerChoice === 'ROCK' || humanChoice === 'SCISSOR' && computerChoice === 'PAPER'){
+        HumanScore ++
+        return `You get a point. ${humanChoice} beats ${computerChoice}`
+    }else{
+        ComputerScore ++
+        return `Computer gets a point. ${computerChoice} beats ${humanChoice}`
+    }
+}
+console.log(playRound(getHumanChoice(), getComputerChoice()))
+console.log(HumanScore)
+console.log(ComputerScore)

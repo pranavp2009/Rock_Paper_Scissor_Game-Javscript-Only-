@@ -47,15 +47,36 @@ let HumanScore = 0
 function playRound(humanChoice, computerChoice){
     
     if (humanChoice === computerChoice){
-        return 'Tie, No points assigned'
+        console.log('Tie, No points assigned')
     }else if (humanChoice === 'ROCK' && computerChoice === 'SCISSOR' || humanChoice === 'PAPER' && computerChoice === 'ROCK' || humanChoice === 'SCISSOR' && computerChoice === 'PAPER'){
         HumanScore ++
-        return `You get a point. ${humanChoice} beats ${computerChoice}`
+        console.log(`You get a point. ${humanChoice} beats ${computerChoice}`)
     }else{
         ComputerScore ++
-        return `Computer gets a point. ${computerChoice} beats ${humanChoice}`
+        console.log(`Computer gets a point. ${computerChoice} beats ${humanChoice}`)
     }
 }
-console.log(playRound(getHumanChoice(), getComputerChoice()))
-console.log(HumanScore)
-console.log(ComputerScore)
+
+
+function playGame(){
+   
+
+    for (let i = 0; i<5; i++){
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+
+        playRound(humanSelection, computerSelection)
+        console.log(HumanScore)
+        console.log(ComputerScore)
+    }
+
+    if (HumanScore> ComputerScore){
+        console.log('You win')
+    }else if (HumanScore < ComputerScore){
+        console.log('Computer wins')
+    } else{
+        console.log('Tie')
+    }
+}
+
+playGame()
